@@ -1,5 +1,6 @@
 .App {
-  text-align: center;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
 }
 
 .App-logo {
@@ -35,4 +36,79 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.footer {
+  padding: 15px 10px;
+  background-color: #282c34;
+  width: 100%;
+  color: white;
+}
+.carousel-caption {
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  font-size: 4rem;
+  top: 40%;
+  text-shadow: 0px 0px 11px grey;
+}
+.nav-link {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .carousel-caption {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 425px) {
+  .carousel-caption {
+    font-size: 1rem;
+    top: 25%;
+  }
+}
+@media screen and (max-width: 375px) {
+  .carousel-caption {
+    font-size: 1rem;
+  }
+}
+.homeForm {
+  padding: 25px;
+  background-color: rgb(248, 249, 250); /* Fallback color */
+  background-color: rgba(82, 82, 82, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  z-index: 2;
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0px 0px 17px -7px black;
+}
+.homeFormLeft,
+.homeFormRight {
+  width: 50%;
+  font-size: 1.25rem !important;
+}
+@media screen and (max-width: 1024px) {
+  .homeFormWrap {
+    flex-direction: column;
+  }
+  .homeFormLeft {
+    font-size: 1rem !important;
+  }
+  .homeFormLeft,
+  .homeFormRight {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .homeForm {
+    width: 100% !important;
+  }
+}
+
+.wrapSliderSlogan {
+  padding: 25px;
+  background: #ffffff73;
 }
