@@ -5,17 +5,15 @@ import { getUser } from "../../actions/conditates";
 import "./candidate.css";
 
 const Candidate = (props) => {
+  props.getUser()
   useEffect(() => {
     props.getUser();
-  }, []);
+  },[]);
+
   let params = useParams();
-  console.log(params);
-  console.log(props.states);
-  console.log(props.states.conditates);
   const replacedURL = params.candidatesName.replaceAll("-", " ");
-  console.log(replacedURL);
   const user = props.states.conditates.filter((i) => i.name === replacedURL);
-  console.log(user);
+ 
   return (
     <div className="candidate">
       <div className="leftSide w-100 d-flex flex-column justify-content-between">
@@ -34,7 +32,11 @@ const Candidate = (props) => {
               <a href={"http://" + user[0].website}> {user[0].website}</a>
             </p>
           </div>
-          <div className={"contactCandidate d-flex flex-column justify-content-center align-items-center"}>
+          <div
+            className={
+              "contactCandidate d-flex flex-column justify-content-center align-items-center"
+            }
+          >
             <h2>Company Info</h2>
             <p> Company Name: {user[0].company.name}</p>
             <p> Catch Phrase: {user[0].company.catchPhrase}</p>

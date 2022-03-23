@@ -14,6 +14,11 @@ export function getUser() {
       .catch((err) => console.log(err));
   };
 }
+
+
+
+
+
 // const receiveProducts = (products) => ({
 //   type: types.RECEIVE_PRODUCTS,
 //   products,

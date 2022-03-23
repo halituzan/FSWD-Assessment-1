@@ -41,7 +41,6 @@ export class Candidates extends Component {
     this.props.getUser();
   }
   render() {
-    console.log(this.props);
     return (
       <div className="container">
         <h1
@@ -67,16 +66,20 @@ export class Candidates extends Component {
               <th>Info</th>
             </tr>
           </thead>
-          {this.state.dataSort
+          {this.props.states.conditates
+            .sort(function (a, b) {
+              var textA = a.name.toUpperCase();
+              var textB = b.name.toUpperCase();
+              return textA < textB ? -1 : textA > textB ? 1 : 0;
+            })
             .filter((item) => {
               if (this.state.filteredValue !== "") {
-                console.log(item.name)
-                return (
-                  item.name.toLowerCase().includes(this.state.filteredValue.toLowerCase())
-                  
-                );
+                console.log(item.name);
+                return item.name
+                  .toLowerCase()
+                  .includes(this.state.filteredValue.toLowerCase());
               }
-              return item
+              return item;
             })
             .map((i) => (
               <tbody key={i.id}>
