@@ -8,7 +8,7 @@ export function conditates(users) {
 export function getUser() {
   return async (dispatch) => {
     axios
-      .get("https://jsonplaceholder.typicode.com/users")
+      .get("/api/users")
       .then((res) => res.data)
       .then((res) => dispatch(conditates(res)))
       .catch((err) => console.log(err));

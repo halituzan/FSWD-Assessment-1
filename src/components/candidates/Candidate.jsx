@@ -5,7 +5,7 @@ import { getUser } from "../../actions/conditates";
 import "./candidate.css";
 
 const Candidate = (props) => {
-  props.getUser()
+  
   useEffect(() => {
     props.getUser();
   },[]);
@@ -29,7 +29,7 @@ const Candidate = (props) => {
             <p> Phone: {user[0].phone.split("x")[0]}</p>
             <p>
               Website:{" "}
-              <a href={"http://" + user[0].website}> {user[0].website}</a>
+              <a href={"http://" + user[0].website} target="_blank" rel="noreferrer"> {user[0].website}</a>
             </p>
           </div>
           <div
